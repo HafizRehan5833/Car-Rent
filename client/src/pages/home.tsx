@@ -5,6 +5,7 @@ import { Navigation } from "@/components/ui/navigation";
 import { HeroSection } from "@/components/ui/hero-section";
 import { Marquee } from "@/components/ui/marquee";
 import { CarCard } from "@/components/ui/car-card";
+import { PromotionalBlock } from "@/components/ui/promotional-block";
 import { whatsappNumber } from "@/lib/car-data";
 import type { Car } from "@shared/schema";
 import { Gem, DollarSign, Clock, Headphones, Gift, Shield } from "lucide-react";
@@ -65,6 +66,8 @@ export default function Home() {
       <HeroSection whatsappUrl={whatsappUrl} />
       
       <Marquee />
+      
+      <PromotionalBlock whatsappUrl={whatsappUrl} />
 
       {/* Why Choose Us */}
       <section id="services" className="py-20 bg-gray-50 relative" data-testid="services-section">
@@ -173,7 +176,34 @@ export default function Home() {
       </section>
 
       {/* Our Premium Fleet */}
-      <section id="fleet" className="py-20 bg-gray-50 relative" data-testid="fleet-section">
+      <section id="fleet" className="py-20 bg-gray-50 relative overflow-hidden" data-testid="fleet-section">
+        {/* Authentic Car Background Integration */}
+        <div className="absolute inset-0 opacity-8">
+          {/* Luxury car showcase - right side */}
+          <div className="absolute top-20 right-0 w-96 h-64">
+            <div className="absolute top-0 right-12 w-80 h-48 rounded-2xl opacity-60" 
+                 style={{
+                   backgroundImage: 'url("https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500")',
+                   backgroundSize: 'cover',
+                   backgroundPosition: 'center',
+                   filter: 'grayscale(60%) brightness(0.8) contrast(1.1)'
+                 }}>
+            </div>
+          </div>
+          
+          {/* Sports car background - left side */}
+          <div className="absolute bottom-32 left-0 w-80 h-56">
+            <div className="absolute bottom-0 left-8 w-72 h-44 rounded-2xl opacity-50" 
+                 style={{
+                   backgroundImage: 'url("https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500")',
+                   backgroundSize: 'cover',
+                   backgroundPosition: 'center',
+                   filter: 'grayscale(70%) brightness(0.7) contrast(1.2)'
+                 }}>
+            </div>
+          </div>
+        </div>
+        
         <div className="floating-shape w-44 h-44 top-20 left-1/3 rounded-full opacity-10"></div>
         <div className="floating-shape w-32 h-32 bottom-20 right-10 rounded-full opacity-15"></div>
         
