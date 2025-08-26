@@ -100,6 +100,7 @@
     position: absolute;
     background: linear-gradient(45deg, hsl(346 87% 53% / 0.1), hsl(346 87% 43% / 0.1));
     animation: morph 8s ease-in-out infinite, float 6s ease-in-out infinite;
+    filter: blur(1px);
   }
   
   .particle {
@@ -161,10 +162,20 @@
 
 @keyframes morph {
   0%, 100% { 
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; 
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    border-radius: 50% 50% 40% 60%/45% 55% 35% 65%;
+    transform: scale(1.1) rotate(90deg);
   }
   50% { 
-    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; 
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    transform: scale(0.9) rotate(180deg);
+  }
+  75% {
+    border-radius: 70% 30% 50% 50%/65% 35% 55% 45%;
+    transform: scale(1.05) rotate(270deg);
   }
 }
 
