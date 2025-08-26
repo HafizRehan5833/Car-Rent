@@ -1,0 +1,91 @@
+{
+  "business_name": "GT Cars Rent",
+  "goal": "Create a professional, engaging, and SEO-friendly landing page and booking API for a luxury car rental service.",
+  "target_audience": "Individuals and businesses seeking premium cars for business trips, weddings, special occasions, and leisure travel.",
+  "tone": "Professional, friendly, and trustworthy with a focus on luxury and comfort.",
+  "design_system": {
+    "theme": "White & Red",
+    "color_palette": {
+      "background": "#FFFFFF",
+      "foreground": "#0F172A",
+      "primary": "#E11D48",
+      "primary_dark": "#BE123C",
+      "primary_light": "#FDE8EC",
+      "accent": "#111827",
+      "muted": "#6B7280",
+      "border": "#E5E7EB"
+    }
+  },
+  "animations": {
+    "morphing_shapes": true,
+    "gradient_text_animation": true,
+    "magnetic_buttons": true,
+    "perspective_motion": true
+  },
+  "sections": [
+    {
+      "title": "Hero Section",
+      "content": "Experience luxury and comfort with GT Cars Rent – where premium vehicles meet exceptional service. Whether it’s a business trip, a special occasion, or just the thrill of driving your dream car, we provide a seamless rental experience with top-tier cars at unbeatable rates."
+    },
+    {
+      "title": "Why Choose Us",
+      "content": [
+        "Luxury & Comfort – A fleet of high-end vehicles designed for style and performance.",
+        "Affordable Rates – Premium service at competitive prices.",
+        "Flexible Rental Plans – Hourly, daily, weekly, or monthly options.",
+        "Exceptional Service – Hassle-free booking and customer support.",
+        "Special Packages – Tailored for weddings, corporate events, and more."
+      ]
+    },
+    {
+      "title": "How It Works",
+      "steps": [
+        "Browse our premium fleet.",
+        "Book your car online with ease.",
+        "Pick up your car and enjoy the ride."
+      ]
+    },
+    {
+      "title": "Fleet Categories",
+      "content": [
+        "Luxury Sedans for business and comfort",
+        "SUVs for family and adventure",
+        "Sports Cars for thrill seekers",
+        "Exotic Cars for standout experiences"
+      ]
+    },
+    {
+      "title": "Fleet Data",
+      "cars": [
+        { "name": "Hyundai Accent 2024", "rate": 150, "currency": "AED", "duration": "Per day" },
+        { "name": "Hyundai Creta", "rate": 150, "currency": "AED", "duration": "Per day" },
+        { "name": "Kia Pegas 2024", "rate": 110, "currency": "AED", "duration": "Daily" },
+        { "name": "Toyota Raize", "rate": 150, "currency": "AED", "duration": "Per day" },
+        { "name": "Yaris 2024", "rate": 130, "currency": "AED", "duration": "Daily" },
+        { "name": "Accent 2023", "rate": 2400, "currency": "AED", "duration": "Monthly" },
+        { "name": "Corolla 2023", "rate": 150, "currency": "AED", "duration": "Daily" },
+        { "name": "Kia Pegas 2024", "rate": 2550, "currency": "AED", "duration": "Monthly" },
+        { "name": "Sunny 2023", "rate": 1800, "currency": "AED", "duration": "Monthly" },
+        { "name": "Elantra 2023", "rate": 150, "currency": "AED", "duration": "Daily" }
+      ]
+    },
+    {
+      "title": "Call to Action",
+      "content": "Book your dream car today and travel in style with GT Cars Rent. Your perfect ride is just a click away."
+    }
+  ],
+  "frontend": {
+    "stack": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    "pages": [
+      { "path": "/", "sections": ["Hero Section", "Why Choose Us", "How It Works", "Fleet Categories", "Fleet Data", "Call to Action"] }
+    ]
+  },
+  "backend": {
+    "language": "Python",
+    "framework": "FastAPI",
+    "api_endpoints": [
+      { "method": "GET", "path": "/api/fleet", "desc": "Get all available cars with rates" },
+      { "method": "POST", "path": "/api/bookings", "desc": "Create a new booking" }
+    ]
+  }
+}
