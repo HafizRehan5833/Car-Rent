@@ -56,7 +56,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(201).json({ 
         message: "Booking created successfully", 
         booking,
-        whatsappUrl: `https://wa.me/+971503019201234?text=Booking confirmed for ${car.name}. Booking ID: ${booking.id}`
+        whatsappUrl: `https://wa.me/+923019201234?text=Booking confirmed for ${car.name}. Booking ID: ${booking.id}`
       });
     } catch (error) {
       console.error("Error creating booking:", error);

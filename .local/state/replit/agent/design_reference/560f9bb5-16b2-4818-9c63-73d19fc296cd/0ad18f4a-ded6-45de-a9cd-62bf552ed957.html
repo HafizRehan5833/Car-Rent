@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Cars Rent - Luxury Car Rental Service | Premium Vehicles in UAE</title>
+    <meta name="description" content="Experience luxury with GT Cars Rent. Premium car rental service offering luxury sedans, SUVs, and sports cars for business trips, weddings, and special occasions in UAE.">
+    <meta name="keywords" content="luxury car rental UAE, premium car hire, wedding car service, business car rental, luxury vehicles Dubai">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#E11D48',
+                    'primary-dark': '#BE123C',
+                    'primary-light': '#FDE8EC',
+                    accent: '#111827',
+                    muted: '#6B7280'
+                },
+                fontFamily: {
+                    sans: ['Inter', 'system-ui', 'sans-serif']
+                }
+            }
+        }
+    };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #E11D48, #BE123C);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .morphing-shape {
+            background: linear-gradient(45deg, #FDE8EC, #E11D48);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+        }
+        
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            25% { border-radius: 30% 70% 40% 60% / 50% 60% 40% 70%; }
+            50% { border-radius: 70% 30% 60% 40% / 40% 70% 30% 60%; }
+            75% { border-radius: 40% 60% 70% 30% / 60% 40% 70% 30%; }
+        }
+        
+        .magnetic-btn {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .magnetic-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(225, 29, 72, 0.3);
+        }
+        
+        .perspective-card {
+            perspective: 1000px;
+            transition: transform 0.3s ease;
+        }
+        
+        .perspective-card:hover .card-inner {
+            transform: rotateY(5deg) rotateX(5deg);
+        }
+        
+        .card-inner {
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+    <!-- @COMPONENT: Header [navigation with logo and contact info] -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold gradient-text">GT Cars Rent</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#fleet" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Fleet</a>
+                        <a href="#services" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                        <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-lg font-medium">
+                            <i class="fas fa-phone mr-2"></i>Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: HeroSection [main value proposition with booking CTA] -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Morphing background shapes -->
+        <div class="absolute top-20 right-20 w-64 h-64 morphing-shape opacity-10 floating-element"></div>
+        <div class="absolute bottom-20 left-20 w-48 h-48 morphing-shape opacity-15 floating-element" style="animation-delay: -3s;"></div>
+        
+        <!-- A luxury sports car on a scenic coastal road at sunset -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black opacity-50"></div>
+        <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080'); background-size: cover; background-position: center;"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Experience 
+                <span class="gradient-text text-white">Luxury</span> 
+                & Comfort
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-200">
+                Where premium vehicles meet exceptional service. Whether it's a business trip, a special occasion, or just the thrill of driving your dream car, we provide a seamless rental experience.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="magnetic-btn bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg text-lg font-semibold">
+                    <i class="fas fa-car mr-2"></i>View Our Fleet
+                </button>
+                <button class="magnetic-btn bg-white bg-opacity-20 backdrop-blur-sm text-white border border-white border-opacity-30 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-30">
+                    <i class="fas fa-play mr-2"></i>How It Works
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: WhyChooseUs [value propositions and benefits] -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Why Choose GT Cars Rent</h3>
+                <p class="text-xl text-muted max-w-2xl mx-auto">Experience the difference with our premium service and exceptional attention to detail</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: benefits.map(benefit => ( -->
+                <div class="perspective-card">
+                    <div class="card-inner bg-white p-8 rounded-xl shadow-lg">
+                        <div class="w-16 h-16 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-gem text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">Luxury & Comfort</h4>
+                        <p class="text-muted">A fleet of high-end vehicles designed for style and performance, ensuring every journey is memorable.</p>
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <div class="card-inner bg-white p-8 rounded-xl shadow-lg">
+                        <div class="w-16 h-16 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-dollar-sign text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">Affordable Rates</h4>
+                        <p class="text-muted">Premium service at competitive prices with transparent pricing and no hidden fees.</p>
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <div class="card-inner bg-white p-8 rounded-xl shadow-lg">
+                        <div class="w-16 h-16 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-clock text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">Flexible Rental Plans</h4>
+                        <p class="text-muted">Hourly, daily, weekly, or monthly options to suit your specific needs and schedule.</p>
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <div class="card-inner bg-white p-8 rounded-xl shadow-lg">
+                        <div class="w-16 h-16 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-headset text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">Exceptional Service</h4>
+                        <p class="text-muted">Hassle-free booking and 24/7 customer support to ensure your complete satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <div class="card-inner bg-white p-8 rounded-xl shadow-lg">
+                        <div class="w-16 h-16 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-heart text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">Special Packages</h4>
+                        <p class="text-muted">Tailored packages for weddings, corporate events, and special occasions.</p>
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <div class="card-inner bg-white p-8 rounded-xl shadow-lg">
+                        <div class="w-16 h-16 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">Trust & Safety</h4>
+                        <p class="text-muted">Fully insured vehicles with comprehensive coverage and safety checks.</p>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: WhyChooseUs -->
+
+    <!-- @COMPONENT: HowItWorks [3-step process explanation] -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h3>
+                <p class="text-xl text-muted max-w-2xl mx-auto">Simple, fast, and secure booking process in just three easy steps</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-4">Browse Our Fleet</h4>
+                    <p class="text-muted">Explore our premium collection of luxury vehicles and find the perfect car for your needs.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-4">Book Online</h4>
+                    <p class="text-muted">Complete your booking with our easy online form with secure payment processing.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-4">Enjoy Your Ride</h4>
+                    <p class="text-muted">Pick up your car and enjoy the ultimate driving experience with style and comfort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HowItWorks -->
+
+    <!-- @COMPONENT: FleetCategories [vehicle categories showcase] -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Our Fleet Categories</h3>
+                <p class="text-xl text-muted max-w-2xl mx-auto">Choose from our diverse range of premium vehicles tailored for every occasion</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="perspective-card">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg">
+                        <!-- A luxury sedan parked in front of a modern office building -->
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Luxury Sedan" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Luxury Sedans</h4>
+                            <p class="text-muted">Perfect for business meetings and executive travel with premium comfort.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg">
+                        <!-- A premium SUV on a scenic mountain road -->
+                        <img src="https://pixabay.com/get/g30037064033ee113f5209d0d07b650fcef7833e99753d19fb8b93f42e804bb7aac7bf16994758f9355f19ad3a229b042d4f2c6e714c9ecc2eb50e58324ceb1f6_1280.jpg" alt="Luxury SUV" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Premium SUVs</h4>
+                            <p class="text-muted">Spacious and versatile vehicles ideal for family trips and adventures.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg">
+                        <!-- A red sports car on a racetrack -->
+                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Sports Car" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Sports Cars</h4>
+                            <p class="text-muted">High-performance vehicles for thrill seekers and driving enthusiasts.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg">
+                        <!-- An exotic luxury car with dramatic lighting -->
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Exotic Car" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Exotic Cars</h4>
+                            <p class="text-muted">Rare and exclusive vehicles for truly standout experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FleetCategories -->
+
+    <!-- @COMPONENT: FleetShowcase [actual vehicles with pricing] -->
+    <section id="fleet" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Our Premium Fleet</h3>
+                <p class="text-xl text-muted max-w-2xl mx-auto">Discover our collection of meticulously maintained luxury vehicles</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: cars.map(car => ( -->
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                        <!-- Actual car image would be loaded from uploads -->
+                        <div class="relative">
+                            <img src="https://pixabay.com/get/g400375e1e0750e623ea8b34f9aa728ccf17f32a207ff3afa498f187db5aad689b4ca13d084b4afbaa29623bba6aca4a0a470dea2d846a0806e8eb20f643b4f8a_1280.jpg" alt="Hyundai Accent 2024" class="w-full h-48 object-cover" data-mock-image="true" data-implementation="Replace with actual car photos from uploads" />
+                            <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Featured
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2" data-bind="car.name">Hyundai Accent 2024</h4>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-primary">
+                                    <span data-bind="car.currency">AED</span> <span data-bind="car.rate">150</span>
+                                </div>
+                                <div class="text-sm text-muted" data-bind="car.duration">Per day</div>
+                            </div>
+                            <div class="flex items-center space-x-4 text-sm text-muted mb-4">
+                                <span><i class="fas fa-users mr-1"></i> 5 Seats</span>
+                                <span><i class="fas fa-cog mr-1"></i> Automatic</span>
+                                <span><i class="fas fa-gas-pump mr-1"></i> Petrol</span>
+                            </div>
+                            <button class="magnetic-btn w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-medium transition-colors" data-event="click:handleBooking" data-implementation="Should open booking modal with car details">
+                                <i class="fas fa-car mr-2"></i>Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                        <div class="relative">
+                            <img src="https://pixabay.com/get/g49d520a6dd3d28cccf34755cc6f1ec0ca65491cc583d563ebb7a47d52ccfa1e45513376e766540a8d7e75f1bfa2af4ded61d48d2c28ae38b8408576bc791a464_1280.jpg" alt="Hyundai Creta" class="w-full h-48 object-cover" />
+                            <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Available
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Hyundai Creta</h4>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-primary">AED 150</div>
+                                <div class="text-sm text-muted">Per day</div>
+                            </div>
+                            <div class="flex items-center space-x-4 text-sm text-muted mb-4">
+                                <span><i class="fas fa-users mr-1"></i> 5 Seats</span>
+                                <span><i class="fas fa-cog mr-1"></i> Automatic</span>
+                                <span><i class="fas fa-gas-pump mr-1"></i> Petrol</span>
+                            </div>
+                            <button class="magnetic-btn w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-car mr-2"></i>Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1610768764270-790fbec18178?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300" alt="Kia Pegas 2024" class="w-full h-48 object-cover" />
+                            <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Popular
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Kia Pegas 2024</h4>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-primary">AED 110</div>
+                                <div class="text-sm text-muted">Daily</div>
+                            </div>
+                            <div class="flex items-center space-x-4 text-sm text-muted mb-4">
+                                <span><i class="fas fa-users mr-1"></i> 5 Seats</span>
+                                <span><i class="fas fa-cog mr-1"></i> Automatic</span>
+                                <span><i class="fas fa-gas-pump mr-1"></i> Petrol</span>
+                            </div>
+                            <button class="magnetic-btn w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-car mr-2"></i>Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300" alt="Toyota Raize" class="w-full h-48 object-cover" />
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Toyota Raize</h4>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-primary">AED 150</div>
+                                <div class="text-sm text-muted">Per day</div>
+                            </div>
+                            <div class="flex items-center space-x-4 text-sm text-muted mb-4">
+                                <span><i class="fas fa-users mr-1"></i> 5 Seats</span>
+                                <span><i class="fas fa-cog mr-1"></i> Automatic</span>
+                                <span><i class="fas fa-gas-pump mr-1"></i> Petrol</span>
+                            </div>
+                            <button class="magnetic-btn w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-car mr-2"></i>Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                        <div class="relative">
+                            <img src="https://pixabay.com/get/g49d520a6dd3d28cccf34755cc6f1ec0ca65491cc583d563ebb7a47d52ccfa1e45513376e766540a8d7e75f1bfa2af4ded61d48d2c28ae38b8408576bc791a464_1280.jpg" alt="Yaris 2024" class="w-full h-48 object-cover" />
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Yaris 2024</h4>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-primary">AED 130</div>
+                                <div class="text-sm text-muted">Daily</div>
+                            </div>
+                            <div class="flex items-center space-x-4 text-sm text-muted mb-4">
+                                <span><i class="fas fa-users mr-1"></i> 5 Seats</span>
+                                <span><i class="fas fa-cog mr-1"></i> Automatic</span>
+                                <span><i class="fas fa-gas-pump mr-1"></i> Petrol</span>
+                            </div>
+                            <button class="magnetic-btn w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-car mr-2"></i>Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                        <div class="relative">
+                            <img src="https://pixabay.com/get/g49d520a6dd3d28cccf34755cc6f1ec0ca65491cc583d563ebb7a47d52ccfa1e45513376e766540a8d7e75f1bfa2af4ded61d48d2c28ae38b8408576bc791a464_1280.jpg" alt="Toyota Corolla 2023" class="w-full h-48 object-cover" />
+                            <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Bestseller
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Corolla 2023</h4>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-primary">AED 150</div>
+                                <div class="text-sm text-muted">Daily</div>
+                            </div>
+                            <div class="flex items-center space-x-4 text-sm text-muted mb-4">
+                                <span><i class="fas fa-users mr-1"></i> 5 Seats</span>
+                                <span><i class="fas fa-cog mr-1"></i> Automatic</span>
+                                <span><i class="fas fa-gas-pump mr-1"></i> Petrol</span>
+                            </div>
+                            <button class="magnetic-btn w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-car mr-2"></i>Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="magnetic-btn bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-lg text-lg font-semibold">
+                    View All Vehicles <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FleetShowcase -->
+
+    <!-- @COMPONENT: BookingForm [interactive reservation form] -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Book Your Dream Car</h3>
+                <p class="text-xl text-muted max-w-2xl mx-auto">Complete the form below and we'll get back to you within 24 hours</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <form class="space-y-6" data-implementation="Should validate form before submission and call booking API">
+                    <!-- @STATE: formData:object = {} -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Enter your full name" data-bind="formData.name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="+971 XX XXX XXXX" data-bind="formData.phone" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="your.email@example.com" data-bind="formData.email" required>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Pick-up Date</label>
+                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" data-bind="formData.pickupDate" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Return Date</label>
+                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" data-bind="formData.returnDate" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Pick-up Time</label>
+                            <input type="time" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" data-bind="formData.pickupTime" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Vehicle Preference</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" data-bind="formData.vehicle" required>
+                            <option value="">Select a vehicle</option>
+                            <option value="hyundai-accent-2024">Hyundai Accent 2024 - AED 150/day</option>
+                            <option value="hyundai-creta">Hyundai Creta - AED 150/day</option>
+                            <option value="kia-pegas-2024">Kia Pegas 2024 - AED 110/day</option>
+                            <option value="toyota-raize">Toyota Raize - AED 150/day</option>
+                            <option value="yaris-2024">Yaris 2024 - AED 130/day</option>
+                            <option value="corolla-2023">Corolla 2023 - AED 150/day</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Special Requirements</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Any special requests or additional services..." data-bind="formData.requirements"></textarea>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" required>
+                        <label class="ml-2 text-sm text-gray-700">I agree to the <a href="#" class="text-primary hover:underline">Terms & Conditions</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a></label>
+                    </div>
+                    
+                    <button type="submit" class="magnetic-btn w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-lg text-lg font-semibold transition-colors" data-event="click:handleSubmit">
+                        <i class="fas fa-calendar-check mr-2"></i>Submit Booking Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: BookingForm -->
+
+    <!-- @COMPONENT: Testimonials [customer reviews and trust indicators] -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h3>
+                <p class="text-xl text-muted max-w-2xl mx-auto">Join thousands of satisfied customers who trust GT Cars Rent for their luxury transportation needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6">"Exceptional service and beautiful cars. The Hyundai Creta was perfect for our family trip to Dubai. Highly recommended!"</p>
+                        <div class="flex items-center">
+                            <!-- A professional headshot of a happy customer -->
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" alt="Customer testimonial" class="w-12 h-12 rounded-full mr-4" />
+                            <div>
+                                <div class="font-semibold text-gray-900">Ahmed Al-Rashid</div>
+                                <div class="text-sm text-muted">Business Executive</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6">"Perfect for our wedding day! The car was immaculate and the service was professional. Made our special day even more memorable."</p>
+                        <div class="flex items-center">
+                            <!-- A professional headshot of a happy female customer -->
+                            <img src="https://pixabay.com/get/g9e1a28b8b9c733d337003b2067a486e0cbe5bcd1030fec7aa26c52a75ff5bd687ce5f32f8d6cf2dc804cad0c7c290b0935344953a36d7cda60f82c66d298a993_1280.jpg" alt="Customer testimonial" class="w-12 h-12 rounded-full mr-4" />
+                            <div>
+                                <div class="font-semibold text-gray-900">Sarah Johnson</div>
+                                <div class="text-sm text-muted">Event Planner</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="perspective-card" data-mock="true">
+                    <div class="card-inner bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6">"Great rates and excellent customer service. The booking process was seamless and the car was delivered on time. Will definitely use again!"</p>
+                        <div class="flex items-center">
+                            <!-- A professional headshot of a satisfied customer -->
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" alt="Customer testimonial" class="w-12 h-12 rounded-full mr-4" />
+                            <div>
+                                <div class="font-semibold text-gray-900">Michael Chen</div>
+                                <div class="text-sm text-muted">Tourism Director</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trust indicators -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">500+</div>
+                    <div class="text-muted">Happy Customers</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">24/7</div>
+                    <div class="text-muted">Customer Support</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                    <div class="text-muted">Premium Vehicles</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">5★</div>
+                    <div class="text-muted">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials -->
+
+    <!-- @COMPONENT: CTA [final call to action] -->
+    <section class="py-20 bg-gradient-to-br from-primary to-primary-dark text-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 morphing-shape opacity-10"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 morphing-shape opacity-15" style="animation-delay: -4s;"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <h3 class="text-5xl font-bold mb-6">Ready to Experience Luxury?</h3>
+            <p class="text-xl mb-8 opacity-90">Book your dream car today and travel in style with GT Cars Rent. Your perfect ride is just a click away.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="magnetic-btn bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+                    <i class="fas fa-phone mr-2"></i>Call Now: +971 XX XXX XXXX
+                </button>
+                <button class="magnetic-btn bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+                    <i class="fas fa-whatsapp mr-2"></i>WhatsApp Us
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CTA -->
+
+    <!-- @COMPONENT: Footer [contact info and links] -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h4 class="text-2xl font-bold gradient-text text-white mb-4">GT Cars Rent</h4>
+                    <p class="text-gray-400 mb-6 max-w-md">Your premier destination for luxury car rentals in UAE. Experience the finest vehicles with exceptional service and competitive rates.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#fleet" class="text-gray-400 hover:text-primary transition-colors">Our Fleet</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Contact Info</h5>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                            <span class="text-gray-400">Dubai, United Arab Emirates</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-primary mr-3"></i>
+                            <span class="text-gray-400">+971 XX XXX XXXX</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span class="text-gray-400">info@gtcarsrent.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-primary mr-3"></i>
+                            <span class="text-gray-400">24/7 Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 GT Cars Rent. All rights reserved. Designed with ❤️ for luxury car enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // TODO: Implement business logic, API calls, and state management
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add magnetic effect to buttons
+            document.querySelectorAll('.magnetic-btn').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px) scale(1.02)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Form submission handler placeholder
+            const bookingForm = document.querySelector('form');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and API submission
+                    console.log('Form submitted - implement booking API call');
+                    alert('Thank you for your booking request! We will contact you within 24 hours.');
+                });
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe cards for animation
+            document.querySelectorAll('.perspective-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        })();
+    </script>
+</body>
+</html>

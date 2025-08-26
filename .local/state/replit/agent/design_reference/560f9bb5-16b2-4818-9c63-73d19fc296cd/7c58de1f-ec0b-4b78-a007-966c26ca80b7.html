@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Cars Rent - Premium Luxury Car Rental in UAE | Book Now</title>
+    <meta name="description" content="Experience luxury with GT Cars Rent. Premium car rental service in UAE offering Hyundai, Toyota, Kia vehicles at competitive rates. Book your dream car today!">
+    <meta name="keywords" content="luxury car rental UAE, premium cars Dubai, Hyundai rental, Toyota rental, wedding cars, business car rental">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtcarsrent.com/">
+    <meta property="og:title" content="GT Cars Rent - Premium Luxury Car Rental in UAE">
+    <meta property="og:description" content="Experience luxury with GT Cars Rent. Premium car rental service offering top-tier vehicles at unbeatable rates.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E11D48',
+                        'primary-dark': '#BE123C',
+                        'primary-light': '#FDE8EC',
+                        accent: '#111827',
+                        muted: '#6B7280'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'magnetic': 'magnetic 0.3s ease-out',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        magnetic: {
+                            '0%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                            '100%': { transform: 'scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(-45deg, #E11D48, #BE123C, #E11D48, #F43F5E);
+            background-size: 400% 400%;
+            animation: gradient 3s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .morphing-shape {
+            background: linear-gradient(-45deg, #FDE8EC, #FFFFFF, #FEF2F2, #FDE8EC);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+        }
+        
+        .magnetic-btn:hover {
+            animation: magnetic 0.3s ease-out;
+            transform: perspective(1000px) rotateX(10deg);
+            box-shadow: 0 20px 40px rgba(225, 29, 72, 0.3);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) perspective(1000px) rotateX(5deg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white text-slate-900">
+    <!-- @COMPONENT: Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center">
+                    <i class="fas fa-car text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-bold gradient-text">GT Cars Rent</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#fleet" class="text-muted hover:text-primary transition-colors">Our Fleet</a>
+                <a href="#services" class="text-muted hover:text-primary transition-colors">Services</a>
+                <a href="#contact" class="text-muted hover:text-primary transition-colors">Contact</a>
+                <a href="https://wa.me/97103019201234" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+            
+            <button class="md:hidden text-muted">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background with luxury car image -->
+        <!-- A luxurious black sedan parked in front of a modern glass building at sunset -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5)), url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080')"></div>
+        
+        <!-- Morphing shapes -->
+        <div class="absolute top-20 left-10 w-64 h-64 morphing-shape rounded-full opacity-20 animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 morphing-shape rounded-full opacity-15 animate-float" style="animation-delay: -3s;"></div>
+        
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Experience Luxury with 
+                <span class="gradient-text">GT Cars Rent</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                Where premium vehicles meet exceptional service. Whether it's a business trip, a special occasion, or just the thrill of driving your dream car, we provide a seamless rental experience.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+                <button class="magnetic-btn bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg">
+                    <i class="fas fa-car-side mr-2"></i>
+                    Book Your Car Now
+                </button>
+                <a href="#fleet" class="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300">
+                    View Our Fleet
+                </a>
+            </div>
+            
+            <!-- Trust indicators -->
+            <div class="flex items-center justify-center space-x-8 mt-16 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-shield-alt text-green-400"></i>
+                    <span>Fully Insured</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-clock text-blue-400"></i>
+                    <span>24/7 Support</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <span>5-Star Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Fleet Showcase -->
+    <section id="fleet" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Our Premium <span class="gradient-text">Fleet</span>
+                </h2>
+                <p class="text-xl text-muted max-w-2xl mx-auto">
+                    Choose from our carefully curated collection of premium vehicles, each maintained to the highest standards.
+                </p>
+            </div>
+
+            <!-- Fleet Categories -->
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-car text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Luxury Sedans</h3>
+                    <p class="text-muted text-sm">Perfect for business and comfort</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">SUVs</h3>
+                    <p class="text-muted text-sm">Ideal for family and adventure</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Sports Cars</h3>
+                    <p class="text-muted text-sm">For the ultimate thrill seekers</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-crown text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Exotic Cars</h3>
+                    <p class="text-muted text-sm">Standout luxury experiences</p>
+                </div>
+            </div>
+
+            <!-- Fleet Cars Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Car 1: Hyundai Accent 2024 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-mock="true">
+                    <!-- White Hyundai Accent sedan parked on modern urban street -->
+                    <img src="https://pixabay.com/get/g8da0672e2d4c574a6bde634da290321427a2fda527b59eab8188430139fe5d3aa32920192042044a5cfa863994cc4700355dbdc2931d45f6809cc9f65d78eff2_1280.jpg" alt="Hyundai Accent 2024" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Hyundai Accent 2024</h3>
+                        <p class="text-muted mb-4">Compact luxury sedan perfect for city driving</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">AED 150</span>
+                                <span class="text-muted">/day</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors" onclick="openBooking('Hyundai Accent 2024')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 2: Hyundai Creta -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-mock="true">
+                    <!-- Silver Hyundai Creta SUV in urban setting -->
+                    <img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Hyundai Creta" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Hyundai Creta</h3>
+                        <p class="text-muted mb-4">Spacious SUV for family adventures</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">AED 150</span>
+                                <span class="text-muted">/day</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors" onclick="openBooking('Hyundai Creta')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 3: Kia Pegas 2024 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-mock="true">
+                    <!-- White Kia sedan on city road -->
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Kia Pegas 2024" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Kia Pegas 2024</h3>
+                        <p class="text-muted mb-4">Economic luxury for daily commutes</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">AED 110</span>
+                                <span class="text-muted">/day</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors" onclick="openBooking('Kia Pegas 2024')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 4: Toyota Raize -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-mock="true">
+                    <!-- White Toyota compact SUV -->
+                    <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Toyota Raize" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Toyota Raize</h3>
+                        <p class="text-muted mb-4">Compact SUV with premium features</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">AED 150</span>
+                                <span class="text-muted">/day</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors" onclick="openBooking('Toyota Raize')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 5: Yaris 2024 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-mock="true">
+                    <!-- White Toyota Yaris sedan -->
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Yaris 2024" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Yaris 2024</h3>
+                        <p class="text-muted mb-4">Reliable and efficient city car</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">AED 130</span>
+                                <span class="text-muted">/day</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors" onclick="openBooking('Yaris 2024')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 6: Corolla 2023 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-mock="true">
+                    <!-- Gray Toyota Corolla sedan -->
+                    <img src="https://images.unsplash.com/photo-1567473030492-533b30c5494c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Corolla 2023" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Corolla 2023</h3>
+                        <p class="text-muted mb-4">Most popular sedan with premium comfort</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">AED 150</span>
+                                <span class="text-muted">/day</span>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors" onclick="openBooking('Corolla 2023')">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Rental Options -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8">Monthly Rental Packages</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                        <h4 class="font-semibold mb-2">Accent 2023</h4>
+                        <div class="text-3xl font-bold text-primary mb-2">AED 2,400</div>
+                        <p class="text-muted">Monthly</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                        <h4 class="font-semibold mb-2">Kia Pegas 2024</h4>
+                        <div class="text-3xl font-bold text-primary mb-2">AED 2,550</div>
+                        <p class="text-muted">Monthly</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                        <h4 class="font-semibold mb-2">Sunny 2023</h4>
+                        <div class="text-3xl font-bold text-primary mb-2">AED 1,800</div>
+                        <p class="text-muted">Monthly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Fleet Showcase -->
+
+    <!-- @COMPONENT: Why Choose Us -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Why Choose <span class="gradient-text">GT Cars Rent</span>
+                </h2>
+                <p class="text-xl text-muted max-w-2xl mx-auto">
+                    We're committed to providing exceptional service and unmatched value for your car rental experience.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-crown text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Luxury & Comfort</h3>
+                    <p class="text-muted">A fleet of high-end vehicles designed for style and performance.</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tag text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Affordable Rates</h3>
+                    <p class="text-muted">Premium service at competitive prices with transparent pricing.</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-calendar-alt text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Flexible Plans</h3>
+                    <p class="text-muted">Hourly, daily, weekly, or monthly rental options to suit your needs.</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">24/7 Support</h3>
+                    <p class="text-muted">Round-the-clock customer support for hassle-free service.</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Special Packages</h3>
+                    <p class="text-muted">Tailored packages for weddings, corporate events, and special occasions.</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Fully Insured</h3>
+                    <p class="text-muted">Complete insurance coverage for peace of mind during your rental.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Why Choose Us -->
+
+    <!-- @COMPONENT: How It Works -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    How It <span class="gradient-text">Works</span>
+                </h2>
+                <p class="text-xl text-muted max-w-2xl mx-auto">
+                    Get on the road in just three simple steps. It's that easy!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
+                            1
+                        </div>
+                        <div class="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gray-300 -translate-y-0.5"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Browse Our Fleet</h3>
+                    <p class="text-muted">Explore our premium collection and choose the perfect vehicle for your needs.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
+                            2
+                        </div>
+                        <div class="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gray-300 -translate-y-0.5"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Book Online</h3>
+                    <p class="text-muted">Complete your booking with our easy online form or WhatsApp chat.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
+                            3
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Enjoy Your Ride</h3>
+                    <p class="text-muted">Pick up your car and experience luxury on the road.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: How It Works -->
+
+    <!-- @COMPONENT: Booking Form -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        Book Your <span class="gradient-text">Dream Car</span>
+                    </h2>
+                    <p class="text-xl text-muted">
+                        Ready to experience luxury? Book your car today and travel in style!
+                    </p>
+                </div>
+
+                <form id="bookingForm" class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="carModel">Select Car</label>
+                            <select id="carModel" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                <option value="">Choose your car</option>
+                                <option value="Hyundai Accent 2024">Hyundai Accent 2024 - AED 150/day</option>
+                                <option value="Hyundai Creta">Hyundai Creta - AED 150/day</option>
+                                <option value="Kia Pegas 2024">Kia Pegas 2024 - AED 110/day</option>
+                                <option value="Toyota Raize">Toyota Raize - AED 150/day</option>
+                                <option value="Yaris 2024">Yaris 2024 - AED 130/day</option>
+                                <option value="Corolla 2023">Corolla 2023 - AED 150/day</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="rentalType">Rental Type</label>
+                            <select id="rentalType" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                <option value="">Select duration</option>
+                                <option value="hourly">Hourly</option>
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="pickupDate">Pickup Date</label>
+                            <input type="date" id="pickupDate" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="pickupTime">Pickup Time</label>
+                            <input type="time" id="pickupTime" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold mb-2" for="email">Email Address</label>
+                        <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold mb-2" for="message">Special Requirements (Optional)</label>
+                        <textarea id="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Any special requests or requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full magnetic-btn bg-primary hover:bg-primary-dark text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Book Now via WhatsApp
+                    </button>
+
+                    <p class="text-center text-sm text-muted mt-4">
+                        By booking, you agree to our terms and conditions. We'll contact you via WhatsApp to confirm your reservation.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Booking Form -->
+
+    <!-- @COMPONENT: Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    What Our <span class="gradient-text">Customers Say</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-6">"Exceptional service! The car was spotless and the booking process was incredibly smooth. Perfect for our wedding day!"</p>
+                    <div class="flex items-center">
+                        <!-- Professional headshot of smiling business woman -->
+                        <img src="https://pixabay.com/get/g573369adb746ded59e3c4b47d270d1b4b3c62c8c8bb0cb990581af14a287424b1dbf85ca1932f99b1a603be3d32893c8df1311ad64b42d8f62c3e93c2c354612_1280.jpg" alt="Sarah Ahmed" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-semibold">Sarah Ahmed</h4>
+                            <p class="text-sm text-muted">Wedding Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-6">"Professional service for our corporate events. Reliable, punctual, and excellent customer support throughout."</p>
+                    <div class="flex items-center">
+                        <!-- Professional headshot of business man in suit -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=60&h=60" alt="Mohammed Al-Rashid" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-semibold">Mohammed Al-Rashid</h4>
+                            <p class="text-sm text-muted">Business Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-6">"Amazing experience! The car was in perfect condition and the rates were very competitive. Highly recommend GT Cars Rent."</p>
+                    <div class="flex items-center">
+                        <!-- Smiling young woman portrait -->
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=60&h=60" alt="Emily Johnson" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-semibold">Emily Johnson</h4>
+                            <p class="text-sm text-muted">Tourist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials -->
+
+    <!-- @COMPONENT: Contact & Footer -->
+    <footer id="contact" class="bg-slate-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center">
+                            <i class="fas fa-car text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold gradient-text">GT Cars Rent</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Experience luxury and comfort with GT Cars Rent – where premium vehicles meet exceptional service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/97103019201234" target="_blank" class="bg-green-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#fleet" class="text-gray-300 hover:text-white transition-colors">Our Fleet</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span class="text-gray-300">+971 3019201234</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span class="text-gray-300">info@gtcarsrent.com</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                            <span class="text-gray-300">Dubai, UAE</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-primary"></i>
+                            <span class="text-gray-300">24/7 Service</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 GT Cars Rent. All rights reserved. | Premium Car Rental Service in UAE
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Contact & Footer -->
+
+    <!-- @COMPONENT: WhatsApp Float Button -->
+    <a href="https://wa.me/97103019201234" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+    <!-- @END_COMPONENT: WhatsApp Float Button -->
+
+    <script>
+        (function() {
+            // Set minimum date to today
+            document.getElementById('pickupDate').min = new Date().toISOString().split('T')[0];
+
+            // Function to open booking with pre-selected car
+            window.openBooking = function(carName) {
+                document.getElementById('carModel').value = carName;
+                document.getElementById('carModel').scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // Form submission handler
+            document.getElementById('bookingForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    car: document.getElementById('carModel').value,
+                    rentalType: document.getElementById('rentalType').value,
+                    pickupDate: document.getElementById('pickupDate').value,
+                    pickupTime: document.getElementById('pickupTime').value,
+                    fullName: document.getElementById('fullName').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Create WhatsApp message
+                const message = `🚗 *GT Cars Rent - New Booking Request*
+
+*Customer Details:*
+👤 Name: ${formData.fullName}
+📞 Phone: ${formData.phone}
+📧 Email: ${formData.email}
+
+*Rental Details:*
+🚘 Car: ${formData.car}
+📅 Pickup Date: ${formData.pickupDate}
+🕐 Pickup Time: ${formData.pickupTime}
+⏰ Rental Type: ${formData.rentalType}
+
+*Special Requirements:*
+${formData.message || 'None specified'}
+
+Please confirm availability and pricing. Thank you!`;
+
+                // Encode message for WhatsApp URL
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/97103019201234?text=${encodedMessage}`;
+                
+                // Open WhatsApp
+                window.open(whatsappURL, '_blank');
+                
+                // Show success message
+                alert('Redirecting to WhatsApp... We\'ll confirm your booking shortly!');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add scroll effect to header
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('bg-white/98');
+                    header.classList.remove('bg-white/95');
+                } else {
+                    header.classList.add('bg-white/95');
+                    header.classList.remove('bg-white/98');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

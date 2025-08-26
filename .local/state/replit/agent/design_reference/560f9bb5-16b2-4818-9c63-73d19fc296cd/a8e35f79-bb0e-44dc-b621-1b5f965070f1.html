@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Cars Rent - Premium Luxury Car Rental Service | Dubai & UAE</title>
+    <meta name="description" content="Rent premium luxury cars in Dubai and UAE. Business trips, weddings, special occasions. Hyundai, Toyota, Kia fleet available from AED 110/day. Professional service.">
+    <meta name="keywords" content="luxury car rental Dubai, premium car hire UAE, wedding car service, business car rental, GT Cars Rent">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E11D48',
+                        'primary-dark': '#BE123C',
+                        'primary-light': '#FDE8EC',
+                        accent: '#111827',
+                        muted: '#6B7280'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Morphing shapes background animation */
+        .morphing-bg {
+            background: linear-gradient(-45deg, #FDE8EC, #FFFFFF, #FEF2F2, #FFF1F2);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Gradient text animation */
+        .gradient-text {
+            background: linear-gradient(-45deg, #E11D48, #BE123C, #DC2626, #E11D48);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientText 3s ease infinite;
+        }
+        
+        @keyframes gradientText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Magnetic button effects */
+        .magnetic-btn {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .magnetic-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(225, 29, 72, 0.3);
+        }
+        
+        .magnetic-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        /* Perspective motion effects */
+        .perspective-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .perspective-card:hover {
+            transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Horizontal marquee scrolling */
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 60s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* Car card enhancements */
+        .car-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .car-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(225, 29, 72, 0.2);
+        }
+        
+        /* Badge animations */
+        .category-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .car-card:hover .category-badge {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #E11D48, #BE123C);
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading animation for images */
+        .car-image {
+            transition: opacity 0.3s ease;
+        }
+        
+        .car-image.loading {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold gradient-text">GT Cars Rent</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#fleet" class="text-gray-700 hover:text-primary transition-colors">Fleet</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#contact" class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium">Book Now</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="relative min-h-screen morphing-bg flex items-center justify-center overflow-hidden pt-16">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span class="gradient-text">Experience Luxury</span><br>
+                <span class="text-gray-900">& Comfort</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Where premium vehicles meet exceptional service. Whether it's a business trip, a special occasion, or just the thrill of driving your dream car, we provide a seamless rental experience with top-tier cars at unbeatable rates.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#fleet" class="magnetic-btn bg-primary text-white px-8 py-4 rounded-full font-semibold text-lg">
+                    <i class="fas fa-car mr-2"></i>Browse Fleet
+                </a>
+                <a href="https://wa.me/+923019201234" class="magnetic-btn bg-white text-primary border-2 border-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary hover:text-white">
+                    <i class="fab fa-whatsapp mr-2"></i>Book via WhatsApp
+                </a>
+            </div>
+        </div>
+        <!-- Floating car illustration -->
+        <div class="absolute bottom-10 right-10 opacity-20">
+            <i class="fas fa-car text-primary text-9xl transform rotate-12"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Animated Marquee Section -->
+    <section class="py-16 bg-gray-50 overflow-hidden">
+        <div class="marquee">
+            <div class="marquee-content flex items-center space-x-16">
+                <span class="text-4xl font-bold text-gray-300">LUXURY SEDANS</span>
+                <i class="fas fa-car text-primary text-3xl"></i>
+                <span class="text-4xl font-bold text-gray-300">PREMIUM SUVS</span>
+                <i class="fas fa-car-side text-primary text-3xl"></i>
+                <span class="text-4xl font-bold text-gray-300">SPORTS CARS</span>
+                <i class="fas fa-car-alt text-primary text-3xl"></i>
+                <span class="text-4xl font-bold text-gray-300">EXOTIC VEHICLES</span>
+                <i class="fas fa-car text-primary text-3xl"></i>
+                <span class="text-4xl font-bold text-gray-300">BUSINESS CLASS</span>
+                <i class="fas fa-car-side text-primary text-3xl"></i>
+                <span class="text-4xl font-bold text-gray-300">LUXURY SEDANS</span>
+                <i class="fas fa-car text-primary text-3xl"></i>
+                <span class="text-4xl font-bold text-gray-300">PREMIUM SUVS</span>
+                <i class="fas fa-car-side text-primary text-3xl"></i>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Animated Marquee Section -->
+
+    <!-- @COMPONENT: Our Premium Fleet Section -->
+    <section id="fleet" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4">
+                    <span class="gradient-text">Our Premium Fleet</span>
+                </h2>
+                <p class="text-xl text-muted max-w-3xl mx-auto">
+                    Discover our collection of luxury vehicles designed for every occasion and preference
+                </p>
+            </div>
+            
+            <!-- Daily Rentals -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Daily Rentals</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- @MAP: Daily rental cars -->
+                    
+                    <!-- Hyundai Accent 2024 -->
+                    <div class="car-card perspective-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Compact
+                            </div>
+                            <!-- Professional Hyundai Accent 2024 in modern city setting -->
+                            <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" 
+                                 alt="Hyundai Accent 2024" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Hyundai Accent 2024</h4>
+                            <p class="text-muted mb-4">4-5 doors • Perfect for city driving</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>4-5 seats</span>
+                                    <span><i class="fas fa-door-open mr-1"></i>4-5 doors</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 150</span>
+                                    <span class="text-muted ml-2">Per day</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hyundai Creta -->
+                    <div class="car-card perspective-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium z-10">
+                                SUV
+                            </div>
+                            <!-- Modern Hyundai Creta SUV for family adventures -->
+                            <img src="https://pixabay.com/get/g466b0a2a6e4f729a2a2e2bed9fdddc7812ce5d3aa28967f25b0e7d44fb2ab1f913b5234f7a93684b5ddde67787f37384be2c7591aa2d1bfbd376f8f96546fce0_1280.jpg" 
+                                 alt="Hyundai Creta SUV" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Hyundai Creta</h4>
+                            <p class="text-muted mb-4">4-5 doors • Family & adventure ready</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>5 seats</span>
+                                    <span><i class="fas fa-door-open mr-1"></i>5 doors</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 150</span>
+                                    <span class="text-muted ml-2">Per day</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kia Pegas 2024 -->
+                    <div class="car-card perspective-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Economy
+                            </div>
+                            <!-- Efficient Kia Pegas 2024 sedan for daily commuting -->
+                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" 
+                                 alt="Kia Pegas 2024" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Kia Pegas 2024</h4>
+                            <p class="text-muted mb-4">4-5 doors • Efficient and reliable</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>4-5 seats</span>
+                                    <span><i class="fas fa-door-open mr-1"></i>4 doors</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 110</span>
+                                    <span class="text-muted ml-2">Daily</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toyota Raize -->
+                    <div class="car-card perspective-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Compact SUV
+                            </div>
+                            <!-- Toyota Raize compact SUV perfect for urban adventures -->
+                            <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" 
+                                 alt="Toyota Raize compact SUV" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Toyota Raize</h4>
+                            <p class="text-muted mb-4">Perfect for urban adventures</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>5 seats</span>
+                                    <span><i class="fas fa-door-open mr-1"></i>5 doors</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 150</span>
+                                    <span class="text-muted ml-2">Per day</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yaris 2024 -->
+                    <div class="car-card perspective-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Economy
+                            </div>
+                            <!-- Toyota Yaris 2024 fuel efficient city car -->
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" 
+                                 alt="Toyota Yaris 2024" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Yaris 2024</h4>
+                            <p class="text-muted mb-4">Fuel efficient city car</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>5 seats</span>
+                                    <span><i class="fas fa-door-open mr-1"></i>5 doors</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 130</span>
+                                    <span class="text-muted ml-2">Daily</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Corolla 2023 -->
+                    <div class="car-card perspective-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Sedan
+                            </div>
+                            <!-- Toyota Corolla 2023 reliable business sedan -->
+                            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" 
+                                 alt="Toyota Corolla 2023" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Corolla 2023</h4>
+                            <p class="text-muted mb-4">Reliable business sedan</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>5 seats</span>
+                                    <span><i class="fas fa-door-open mr-1"></i>4 doors</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 150</span>
+                                    <span class="text-muted ml-2">Daily</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Elantra 2023 -->
+                    <div class="car-card perspective-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Sedan
+                            </div>
+                            <!-- Hyundai Elantra 2023 elegant business sedan -->
+                            <img src="https://pixabay.com/get/g6778f06ab5fc65d180fddf0c243bcf6cf44e0e06b08cc42e666f5ab8a8e3f770231db0a20d30166804901c8dd551bf58474eaab98f05adab8af59202fa137664_1280.jpg" 
+                                 alt="Hyundai Elantra 2023" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Elantra 2023</h4>
+                            <p class="text-muted mb-4">Elegant business sedan</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>5 seats</span>
+                                    <span><i class="fas fa-door-open mr-1"></i>4 doors</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 150</span>
+                                    <span class="text-muted ml-2">Daily</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP -->
+                </div>
+            </div>
+
+            <!-- Monthly Rentals -->
+            <div>
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Monthly Packages</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- @MAP: Monthly rental cars -->
+                    
+                    <!-- Accent 2023 Monthly -->
+                    <div class="car-card perspective-card bg-gradient-to-br from-primary-light to-white rounded-2xl shadow-lg overflow-hidden border border-primary/20">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Monthly Special
+                            </div>
+                            <!-- Professional Hyundai Accent 2023 for long-term rental -->
+                            <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" 
+                                 alt="Hyundai Accent 2023 monthly rental" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Accent 2023</h4>
+                            <p class="text-muted mb-4">Perfect for extended stays</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>5 seats</span>
+                                    <span><i class="fas fa-calendar mr-1"></i>Monthly</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 2,400</span>
+                                    <span class="text-muted ml-2">Monthly</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kia Pegas 2024 Monthly -->
+                    <div class="car-card perspective-card bg-gradient-to-br from-primary-light to-white rounded-2xl shadow-lg overflow-hidden border border-primary/20">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Monthly Special
+                            </div>
+                            <!-- Kia Pegas 2024 for long-term monthly rental -->
+                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" 
+                                 alt="Kia Pegas 2024 monthly rental" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Kia Pegas 2024</h4>
+                            <p class="text-muted mb-4">Economic monthly solution</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>5 seats</span>
+                                    <span><i class="fas fa-calendar mr-1"></i>Monthly</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 2,550</span>
+                                    <span class="text-muted ml-2">Monthly</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sunny 2023 Monthly -->
+                    <div class="car-card perspective-card bg-gradient-to-br from-primary-light to-white rounded-2xl shadow-lg overflow-hidden border border-primary/20">
+                        <div class="relative">
+                            <div class="category-badge absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+                                Best Value
+                            </div>
+                            <!-- Nissan Sunny 2023 affordable monthly rental option -->
+                            <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" 
+                                 alt="Nissan Sunny 2023 monthly rental" 
+                                 class="car-image w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Sunny 2023</h4>
+                            <p class="text-muted mb-4">Affordable long-term option</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4 text-sm text-muted">
+                                    <span><i class="fas fa-users mr-1"></i>5 seats</span>
+                                    <span><i class="fas fa-calendar mr-1"></i>Monthly</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-3xl font-bold text-primary">AED 1,800</span>
+                                    <span class="text-muted ml-2">Monthly</span>
+                                </div>
+                                <button class="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Our Premium Fleet Section -->
+
+    <!-- @COMPONENT: Why Choose Us Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose GT Cars Rent</h2>
+                <p class="text-xl text-muted max-w-3xl mx-auto">
+                    Experience the difference with our premium service and exceptional vehicle fleet
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: Service features -->
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-crown text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Luxury & Comfort</h3>
+                    <p class="text-muted">A fleet of high-end vehicles designed for style and performance.</p>
+                </div>
+                
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-dollar-sign text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Affordable Rates</h3>
+                    <p class="text-muted">Premium service at competitive prices.</p>
+                </div>
+                
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Flexible Plans</h3>
+                    <p class="text-muted">Hourly, daily, weekly, or monthly options.</p>
+                </div>
+                
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Exceptional Service</h3>
+                    <p class="text-muted">Hassle-free booking and customer support.</p>
+                </div>
+                
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-gift text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Special Packages</h3>
+                    <p class="text-muted">Tailored for weddings, corporate events, and more.</p>
+                </div>
+                
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Trusted & Reliable</h3>
+                    <p class="text-muted">Professional service you can count on.</p>
+                </div>
+                <!-- @END_MAP -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Why Choose Us Section -->
+
+    <!-- @COMPONENT: How It Works Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+                <p class="text-xl text-muted max-w-3xl mx-auto">
+                    Simple steps to get you on the road with your dream car
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- @MAP: Process steps -->
+                <div class="perspective-card text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-3xl font-bold">1</span>
+                        </div>
+                        <div class="absolute top-12 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-primary-light hidden md:block"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Browse our premium fleet</h3>
+                    <p class="text-muted">Explore our collection of luxury vehicles and find the perfect car for your needs.</p>
+                </div>
+                
+                <div class="perspective-card text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-3xl font-bold">2</span>
+                        </div>
+                        <div class="absolute top-12 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-primary-light hidden md:block"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Book your car online with ease</h3>
+                    <p class="text-muted">Simple and secure booking process with instant confirmation via WhatsApp.</p>
+                </div>
+                
+                <div class="perspective-card text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-3xl font-bold">3</span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pick up your car and enjoy the ride</h3>
+                    <p class="text-muted">Collect your vehicle and experience luxury driving at its finest.</p>
+                </div>
+                <!-- @END_MAP -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: How It Works Section -->
+
+    <!-- @COMPONENT: Fleet Categories Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Fleet Categories</h2>
+                <p class="text-xl text-muted max-w-3xl mx-auto">
+                    Choose from our diverse range of premium vehicles
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- @MAP: Fleet categories -->
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <!-- Luxury sedan for business and comfort -->
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Luxury sedan" 
+                         class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Luxury Sedans</h3>
+                    <p class="text-muted">Perfect for business and comfort</p>
+                </div>
+                
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <!-- SUV for family and adventure -->
+                    <img src="https://pixabay.com/get/gaa12e2b91391f41dddc7cfa19fb7bea526c0e3dbf7ab3288b3c37863a1180da8dcfeef7d8cde49ab814a88b6ad7300fc17e93f8bf8e548a1e133c53ee6aee20e_1280.jpg" 
+                         alt="Luxury SUV" 
+                         class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">SUVs</h3>
+                    <p class="text-muted">Ideal for family and adventure</p>
+                </div>
+                
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <!-- Sports car for thrill seekers -->
+                    <img src="https://pixabay.com/get/ge8bf879a42f0a4679f91c75b56849da2ada021ee04ddef5d6604016ccfb276fc32b8b1ca57c97593c011f8bbf4c2ea5605a63be76c36105c12b1b9a8beadb25b_1280.jpg" 
+                         alt="Sports car" 
+                         class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Sports Cars</h3>
+                    <p class="text-muted">For thrill seekers</p>
+                </div>
+                
+                <div class="perspective-card bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <!-- Exotic car for standout experiences -->
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Exotic luxury car" 
+                         class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Exotic Cars</h3>
+                    <p class="text-muted">For standout experiences</p>
+                </div>
+                <!-- @END_MAP -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Fleet Categories Section -->
+
+    <!-- @COMPONENT: Call to Action Section -->
+    <section id="contact" class="py-20 bg-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-primary-dark"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-bold mb-6">Ready to Drive Your Dream Car?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Book your dream car today and travel in style with GT Cars Rent. Your perfect ride is just a click away.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/+923019201234?text=Hi,%20I%20would%20like%20to%20book%20a%20car%20from%20GT%20Cars%20Rent" 
+                   class="magnetic-btn bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100">
+                    <i class="fab fa-whatsapp mr-2"></i>Book via WhatsApp
+                </a>
+                <a href="tel:+923019201234" class="magnetic-btn border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">24/7</div>
+                    <div class="opacity-80">Customer Support</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <div class="opacity-80">Premium Vehicles</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">1000+</div>
+                    <div class="opacity-80">Happy Customers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Call to Action Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-3xl font-bold gradient-text mb-4">GT Cars Rent</h3>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Premium luxury car rental service in Dubai and UAE. Experience comfort, style, and exceptional service with our fleet of high-end vehicles.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-dark transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-dark transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/+923019201234" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-dark transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#fleet" class="hover:text-white transition-colors">Our Fleet</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:+923019201234" class="hover:text-white transition-colors">+92 301 920 1234</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <a href="https://wa.me/+923019201234" class="hover:text-white transition-colors">WhatsApp</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:info@gtcarsrent.com" class="hover:text-white transition-colors">info@gtcarsrent.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Dubai, UAE</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 GT Cars Rent. All rights reserved. Premium luxury car rental service.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement business logic, API calls, or state management
+        (function() {
+            // Initialize interactive elements with IIFE to avoid global namespace pollution
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Enhanced magnetic button effects
+            document.querySelectorAll('.magnetic-btn').forEach(button => {
+                button.addEventListener('mouseenter', function(e) {
+                    this.style.transform = 'translateY(-8px) scale(1.05)';
+                });
+                
+                button.addEventListener('mouseleave', function(e) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Car card hover effects
+            document.querySelectorAll('.car-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-12px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // WhatsApp booking functionality
+            document.querySelectorAll('button:contains("Select")').forEach(button => {
+                button.addEventListener('click', function() {
+                    const carCard = this.closest('.car-card');
+                    const carName = carCard.querySelector('h4').textContent;
+                    const price = carCard.querySelector('.text-primary').textContent;
+                    const message = encodeURIComponent(`Hi, I would like to book the ${carName} at ${price}. Please provide more details.`);
+                    window.open(`https://wa.me/+923019201234?text=${message}`, '_blank');
+                });
+            });
+
+            // Image loading optimization
+            document.querySelectorAll('.car-image').forEach(img => {
+                img.addEventListener('load', function() {
+                    this.classList.remove('loading');
+                });
+                
+                img.addEventListener('error', function() {
+                    this.src = 'https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500';
+                });
+            });
+
+            // Navbar background on scroll
+            let navbar = document.querySelector('nav');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/95');
+                    navbar.classList.remove('bg-white/90');
+                } else {
+                    navbar.classList.add('bg-white/90');
+                    navbar.classList.remove('bg-white/95');
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
