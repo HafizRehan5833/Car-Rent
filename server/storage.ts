@@ -1,212 +1,202 @@
-import { Car, InsertCar, Booking, InsertBooking } from '../shared/schema';
+import { type User, type InsertUser, type Car, type InsertCar, type Booking, type InsertBooking } from "@shared/schema";
+import { randomUUID } from "crypto";
 
 export interface IStorage {
-  // Car operations
-  getCars(): Promise<Car[]>;
-  getCarById(id: string): Promise<Car | null>;
+  getUser(id: string): Promise<User | undefined>;
+  getUserByUsername(username: string): Promise<User | undefined>;
+  createUser(user: InsertUser): Promise<User>;
+  
+  // Car methods
+  getAllCars(): Promise<Car[]>;
+  getCarById(id: string): Promise<Car | undefined>;
   createCar(car: InsertCar): Promise<Car>;
-  updateCar(id: string, car: Partial<InsertCar>): Promise<Car | null>;
-  deleteCar(id: string): Promise<boolean>;
-
-  // Booking operations
-  getBookings(): Promise<Booking[]>;
-  getBookingById(id: string): Promise<Booking | null>;
+  
+  // Booking methods
   createBooking(booking: InsertBooking): Promise<Booking>;
-  updateBooking(id: string, booking: Partial<InsertBooking>): Promise<Booking | null>;
-  deleteBooking(id: string): Promise<boolean>;
+  getBookingsByCarId(carId: string): Promise<Booking[]>;
 }
 
 export class MemStorage implements IStorage {
-  private cars: Car[] = [
-    {
-      id: '1',
-      name: 'Hyundai Accent 2024',
-      rate: 150,
-      currency: 'AED',
-      duration: 'Per day',
-      category: 'Compact',
-      doors: '4-5 doors',
-      description: 'Perfect for city driving with excellent fuel efficiency and modern features',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.20.15_48364618_1756222277342.jpg',
-      features: ['Air Conditioning', 'Bluetooth', 'USB Ports', 'Power Steering']
-    },
-    {
-      id: '2',
-      name: 'Hyundai Creta',
-      rate: 150,
-      currency: 'AED',
-      duration: 'Per day',
-      category: 'SUV',
-      doors: '4-5 doors',
-      description: 'Family & adventure ready SUV with spacious interior and advanced safety features',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.20.15_48364618_1756222277342.jpg',
-      features: ['All-Wheel Drive', 'Panoramic Sunroof', 'Cruise Control', 'Parking Sensors']
-    },
-    {
-      id: '3',
-      name: 'Kia Pegas 2024',
-      rate: 110,
-      currency: 'AED',
-      duration: 'Daily',
-      category: 'Economy',
-      doors: '4-5 doors',
-      description: 'Efficient and reliable economy car perfect for budget-conscious travelers',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.20.15_48364618_1756222277342.jpg',
-      features: ['Fuel Efficient', 'Digital Display', 'Remote Keyless Entry', 'ABS Brakes']
-    },
-    {
-      id: '4',
-      name: 'Toyota Raize',
-      rate: 150,
-      currency: 'AED',
-      duration: 'Per day',
-      category: 'Compact SUV',
-      doors: '4-5 doors',
-      description: 'Compact SUV combining urban agility with off-road capability',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.20.15_48364618_1756222277342.jpg',
-      features: ['Smart Entry', 'Push Start', 'Hill Start Assist', 'LED Headlights']
-    },
-    {
-      id: '5',
-      name: 'Yaris 2024',
-      rate: 130,
-      currency: 'AED',
-      duration: 'Daily',
-      category: 'Compact',
-      doors: '4-5 doors',
-      description: 'Modern compact car with premium interior and advanced technology',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.20.15_48364618_1756222277342.jpg',
-      features: ['Toyota Safety Sense', 'Wireless Charging', 'Apple CarPlay', 'Android Auto']
-    },
-    {
-      id: '6',
-      name: 'Accent 2023',
-      rate: 2400,
-      currency: 'AED',
-      duration: 'Monthly',
-      category: 'Compact',
-      doors: '4-5 doors',
-      description: 'Long-term rental option with excellent reliability and comfort',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.19.54_a6045abe_1756222277343.jpg',
-      features: ['Extended Warranty', 'Maintenance Included', 'Roadside Assistance', '24/7 Support']
-    },
-    {
-      id: '7',
-      name: 'Corolla 2023',
-      rate: 150,
-      currency: 'AED',
-      duration: 'Daily',
-      category: 'Sedan',
-      doors: '4 doors',
-      description: 'Reliable and comfortable sedan ideal for business and leisure travel',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.19.54_a6045abe_1756222277343.jpg',
-      features: ['Hybrid Engine', 'Lane Keeping Assist', 'Adaptive Cruise Control', 'Premium Audio']
-    },
-    {
-      id: '8',
-      name: 'Kia Pegas 2024',
-      rate: 2550,
-      currency: 'AED',
-      duration: 'Monthly',
-      category: 'Economy',
-      doors: '4-5 doors',
-      description: 'Monthly rental option with comprehensive insurance and maintenance',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.19.54_a6045abe_1756222277343.jpg',
-      features: ['Full Insurance', 'Monthly Maintenance', 'Emergency Support', 'Flexible Terms']
-    },
-    {
-      id: '9',
-      name: 'Sunny 2023',
-      rate: 1800,
-      currency: 'AED',
-      duration: 'Monthly',
-      category: 'Sedan',
-      doors: '4 doors',
-      description: 'Affordable monthly option with proven reliability and low running costs',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.19.54_a6045abe_1756222277343.jpg',
-      features: ['Low Fuel Consumption', 'Spacious Interior', 'Digital Cluster', 'Power Windows']
-    },
-    {
-      id: '10',
-      name: 'Elantra 2023',
-      rate: 150,
-      currency: 'AED',
-      duration: 'Daily',
-      category: 'Sedan',
-      doors: '4 doors',
-      description: 'Premium sedan with cutting-edge technology and sophisticated design',
-      image: '@assets/WhatsApp Image 2025-08-26 at 20.19.54_a6045abe_1756222277343.jpg',
-      features: ['Smart Trunk', 'Wireless CarPlay', 'Premium Sound', 'Heated Seats']
-    }
-  ];
+  private users: Map<string, User>;
+  private cars: Map<string, Car>;
+  private bookings: Map<string, Booking>;
 
-  private bookings: Booking[] = [];
-
-  async getCars(): Promise<Car[]> {
-    return [...this.cars];
+  constructor() {
+    this.users = new Map();
+    this.cars = new Map();
+    this.bookings = new Map();
+    
+    // Initialize with fleet data
+    this.initializeFleetData();
   }
 
-  async getCarById(id: string): Promise<Car | null> {
-    return this.cars.find(car => car.id === id) || null;
+  private initializeFleetData() {
+    const fleetData: InsertCar[] = [
+      {
+        name: "Hyundai Accent 2024",
+        category: "Compact",
+        rate: 150,
+        currency: "AED",
+        duration: "Per day",
+        description: "Perfect for city driving",
+        doors: "4-5 doors",
+        capacity: "5 passengers",
+        imageUrl: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      },
+      {
+        name: "Hyundai Creta",
+        category: "SUV", 
+        rate: 150,
+        currency: "AED",
+        duration: "Per day",
+        description: "Family & adventure ready",
+        doors: "4-5 doors",
+        capacity: "7 passengers",
+        imageUrl: "https://images.unsplash.com/photo-1616422285623-13ff0162193c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      },
+      {
+        name: "Kia Pegas 2024",
+        category: "Economy",
+        rate: 110,
+        currency: "AED", 
+        duration: "Daily",
+        description: "Efficient & reliable",
+        doors: "4-5 doors",
+        capacity: "5 passengers",
+        imageUrl: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      },
+      {
+        name: "Toyota Raize",
+        category: "Compact SUV",
+        rate: 150,
+        currency: "AED",
+        duration: "Per day", 
+        description: "Urban mobility",
+        doors: "4-5 doors",
+        capacity: "5 passengers",
+        imageUrl: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      },
+      {
+        name: "Yaris 2024",
+        category: "Hatchback",
+        rate: 130,
+        currency: "AED",
+        duration: "Daily",
+        description: "Modern & efficient",
+        doors: "4-5 doors", 
+        capacity: "5 passengers",
+        imageUrl: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      },
+      {
+        name: "Corolla 2023",
+        category: "Sedan",
+        rate: 150,
+        currency: "AED",
+        duration: "Daily",
+        description: "Business preferred",
+        doors: "4 doors",
+        capacity: "5 passengers", 
+        imageUrl: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      },
+      {
+        name: "Accent 2023", 
+        category: "Compact",
+        rate: 2400,
+        currency: "AED",
+        duration: "Monthly",
+        description: "Monthly rental package",
+        doors: "4 doors",
+        capacity: "5 passengers",
+        imageUrl: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      },
+      {
+        name: "Sunny 2023",
+        category: "Sedan", 
+        rate: 1800,
+        currency: "AED",
+        duration: "Monthly",
+        description: "Monthly rental package",
+        doors: "4 doors",
+        capacity: "5 passengers",
+        imageUrl: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      },
+      {
+        name: "Elantra 2023",
+        category: "Sedan",
+        rate: 150, 
+        currency: "AED",
+        duration: "Daily",
+        description: "Premium comfort",
+        doors: "4 doors",
+        capacity: "5 passengers",
+        imageUrl: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+        available: 1
+      }
+    ];
+
+    fleetData.forEach(car => this.createCar(car));
   }
 
-  async createCar(car: InsertCar): Promise<Car> {
-    const newCar: Car = {
-      ...car,
-      id: Date.now().toString()
+  async getUser(id: string): Promise<User | undefined> {
+    return this.users.get(id);
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    return Array.from(this.users.values()).find(
+      (user) => user.username === username,
+    );
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const id = randomUUID();
+    const user: User = { ...insertUser, id };
+    this.users.set(id, user);
+    return user;
+  }
+
+  async getAllCars(): Promise<Car[]> {
+    return Array.from(this.cars.values());
+  }
+
+  async getCarById(id: string): Promise<Car | undefined> {
+    return this.cars.get(id);
+  }
+
+  async createCar(insertCar: InsertCar): Promise<Car> {
+    const id = randomUUID();
+    const car: Car = { 
+      ...insertCar, 
+      id, 
+      createdAt: new Date() 
     };
-    this.cars.push(newCar);
-    return newCar;
+    this.cars.set(id, car);
+    return car;
   }
 
-  async updateCar(id: string, updates: Partial<InsertCar>): Promise<Car | null> {
-    const index = this.cars.findIndex(car => car.id === id);
-    if (index === -1) return null;
-    
-    this.cars[index] = { ...this.cars[index], ...updates };
-    return this.cars[index];
-  }
-
-  async deleteCar(id: string): Promise<boolean> {
-    const index = this.cars.findIndex(car => car.id === id);
-    if (index === -1) return false;
-    
-    this.cars.splice(index, 1);
-    return true;
-  }
-
-  async getBookings(): Promise<Booking[]> {
-    return [...this.bookings];
-  }
-
-  async getBookingById(id: string): Promise<Booking | null> {
-    return this.bookings.find(booking => booking.id === id) || null;
-  }
-
-  async createBooking(booking: InsertBooking): Promise<Booking> {
-    const newBooking: Booking = {
-      ...booking,
-      id: Date.now().toString(),
-      status: 'pending',
-      createdAt: new Date().toISOString()
+  async createBooking(insertBooking: InsertBooking): Promise<Booking> {
+    const id = randomUUID();
+    const booking: Booking = { 
+      ...insertBooking, 
+      id, 
+      createdAt: new Date() 
     };
-    this.bookings.push(newBooking);
-    return newBooking;
+    this.bookings.set(id, booking);
+    return booking;
   }
 
-  async updateBooking(id: string, updates: Partial<InsertBooking>): Promise<Booking | null> {
-    const index = this.bookings.findIndex(booking => booking.id === id);
-    if (index === -1) return null;
-    
-    this.bookings[index] = { ...this.bookings[index], ...updates };
-    return this.bookings[index];
-  }
-
-  async deleteBooking(id: string): Promise<boolean> {
-    const index = this.bookings.findIndex(booking => booking.id === id);
-    if (index === -1) return false;
-    
-    this.bookings.splice(index, 1);
-    return true;
+  async getBookingsByCarId(carId: string): Promise<Booking[]> {
+    return Array.from(this.bookings.values()).filter(
+      booking => booking.carId === carId
+    );
   }
 }
+
+export const storage = new MemStorage();

@@ -1,79 +1,90 @@
-import { Request, Response } from 'express';
-import { IStorage } from './storage';
-import { insertBookingSchema } from '../shared/schema';
+import type { Express } from "express";
+import { createServer, type Server } from "http";
+import { storage } from "./storage";
+import { insertBookingSchema } from "@shared/schema";
+import { z } from "zod";
 
-export function setupRoutes(app: any, storage: IStorage) {
-  // Get all cars
-  app.get('/api/cars', async (req: Request, res: Response) => {
+export async function registerRoutes(app: Express): Promise<Server> {
+  
+  // Get all available cars
+  app.get("/api/fleet", async (req, res) => {
     try {
-      const cars = await storage.getCars();
+      const cars = await storage.getAllCars();
       res.json(cars);
     } catch (error) {
-      res.status(500).json({ error: 'Failed to fetch cars' });
+      console.error("Error fetching cars:", error);
+      res.status(500).json({ error: "Failed to fetch cars" });
     }
   });
 
-  // Get car by ID
-  app.get('/api/cars/:id', async (req: Request, res: Response) => {
+  // Get specific car by ID
+  app.get("/api/fleet/:id", async (req, res) => {
     try {
-      const car = await storage.getCarById(req.params.id);
+      const { id } = req.params;
+      const car = await storage.getCarById(id);
+      
       if (!car) {
-        return res.status(404).json({ error: 'Car not found' });
+        return res.status(404).json({ error: "Car not found" });
       }
+      
       res.json(car);
     } catch (error) {
-      res.status(500).json({ error: 'Failed to fetch car' });
+      console.error("Error fetching car:", error);
+      res.status(500).json({ error: "Failed to fetch car" });
     }
   });
 
-  // Create booking with WhatsApp notification
-  app.post('/api/bookings', async (req: Request, res: Response) => {
+  // Create a new booking
+  app.post("/api/bookings", async (req, res) => {
     try {
-      const validatedData = insertBookingSchema.parse(req.body);
-      const booking = await storage.createBooking(validatedData);
+      // Validate request body
+      const bookingData = insertBookingSchema.parse(req.body);
       
-      // Get car details for WhatsApp message
-      const car = await storage.getCarById(booking.carId);
+      // Check if car exists and is available
+      const car = await storage.getCarById(bookingData.carId);
+      if (!car) {
+        return res.status(404).json({ error: "Car not found" });
+      }
       
-      // Prepare WhatsApp message
-      const whatsappMessage = `🚗 New Car Rental Booking!
+      if (!car.available) {
+        return res.status(400).json({ error: "Car is not available" });
+      }
       
-📋 Booking Details:
-Customer: ${booking.customerName}
-Phone: ${booking.phone}
-Email: ${booking.email}
-Car: ${car?.name || 'Unknown'}
-Rate: ${car?.rate} ${car?.currency} ${car?.duration}
-Start Date: ${booking.startDate}
-End Date: ${booking.endDate}
-${booking.message ? `Message: ${booking.message}` : ''}
-
-Please contact the customer to confirm the booking.`;
-
-      // Create WhatsApp link
-      const whatsappNumber = '923019201234'; // Your WhatsApp number
-      const encodedMessage = encodeURIComponent(whatsappMessage);
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-      res.json({ 
-        booking, 
-        whatsappUrl,
-        success: true,
-        message: 'Booking created successfully! Please click the WhatsApp link to notify the owner.'
+      // Create booking
+      const booking = await storage.createBooking(bookingData);
+      
+      res.status(201).json({ 
+        message: "Booking created successfully", 
+        booking,
+        whatsappUrl: `https://wa.me/+971503019201234?text=Booking confirmed for ${car.name}. Booking ID: ${booking.id}`
       });
     } catch (error) {
-      console.error('Booking error:', error);
-      res.status(400).json({ error: 'Invalid booking data' });
+      console.error("Error creating booking:", error);
+      
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ 
+          error: "Invalid booking data", 
+          details: error.errors 
+        });
+      }
+      
+      res.status(500).json({ error: "Failed to create booking" });
     }
   });
 
-  // Get all bookings
-  app.get('/api/bookings', async (req: Request, res: Response) => {
+  // Get bookings for a specific car
+  app.get("/api/bookings/car/:carId", async (req, res) => {
     try {
-      const bookings = await storage.getBookings();
+      const { carId } = req.params;
+      const bookings = await storage.getBookingsByCarId(carId);
       res.json(bookings);
     } catch (error) {
-      res.status(500).json({ error: 'Failed to fetch bookings' });
+      console.error("Error fetching bookings:", error);
+      res.status(500).json({ error: "Failed to fetch bookings" });
     }
   });
+
+  const httpServer = createServer(app);
+
+  return httpServer;
 }
