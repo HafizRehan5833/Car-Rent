@@ -192,7 +192,7 @@ export default function Home() {
           </div>
           
           {/* Sports car background - left side */}
-          <div className="absolute bottom-32 left-0 w-80 h-56">
+          {/* <div className="absolute bottom-32 left-0 w-80 h-56">
             <div className="absolute bottom-0 left-8 w-72 h-44 rounded-2xl opacity-50" 
                  style={{
                    backgroundImage: 'url("https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500")',
@@ -201,7 +201,7 @@ export default function Home() {
                    filter: 'grayscale(70%) brightness(0.7) contrast(1.2)'
                  }}>
             </div>
-          </div>
+          </div> */}
         </div>
         
         <div className="floating-shape w-44 h-44 top-20 left-1/3 rounded-full opacity-10"></div>

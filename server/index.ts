@@ -52,12 +52,10 @@ app.use((req, res, next) => {
   } else {
     serveStatic(app);
   }
+const port = parseInt(process.env.PORT || "5000", 10);
+const host = process.env.HOST || (process.env.NODE_ENV === "production" ? "0.0.0.0" : "localhost");
+server.listen(port, host, () => {
+  log(`🚀 Server running at http://${host}:${port}`);
+});
 
-  const port = parseInt(process.env.PORT || "5000", 10);
-
-  // ✅ Remove reusePort (not supported on Windows)
-  // ✅ Use localhost by default (change to "0.0.0.0" if you want LAN access)
-  server.listen(port, "localhost", () => {
-    log(`🚀 Server running at http://localhost:${port}`);
-  });
 })();
