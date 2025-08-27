@@ -62,44 +62,45 @@ export function PromotionalBlock({ whatsappUrl }: PromotionalBlockProps) {
               </button>
             </div>
           </div>
-          
-          {/* <div className="relative">
-            <div className="car-card bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8" data-testid="featured-car">
-              <div className="absolute -top-4 -right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold">
-                FEATURED
-              </div>
-              
-              <div className="aspect-video rounded-2xl overflow-hidden mb-6"
-                   style={{
-                     backgroundImage: 'url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400")',
-                     backgroundSize: 'cover',
-                     backgroundPosition: 'center'
-                   }}>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Mercedes C-Class 2024</h3>
-              <p className="text-gray-600 mb-4">Luxury • 4 doors • Premium comfort</p>
-              
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <span className="text-3xl font-bold text-primary">AED 280</span>
-                  <span className="text-gray-500 ml-2">Per day</span>
-                </div>
-                <div className="text-right">
-                  <div className="text-sm text-gray-500 line-through">AED 350</div>
-                  <div className="text-sm text-green-600 font-medium">Save 20%</div>
-                </div>
-              </div>
-              
-              <a 
-                href={whatsappUrl}
-                className="magnetic-btn bg-primary text-white w-full py-3 rounded-full font-semibold text-center block"
-                data-testid="button-book-featured"
-              >
-                Book This Deal
-              </a>
-            </div>
-          </div> */}
+<div className="relative"> 
+  <div className="car-card bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8" data-testid="featured-car">
+    <div className="absolute -top-4 -right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold">
+      FEATURED
+    </div>
+    
+    <div className="aspect-video rounded-2xl overflow-hidden mb-6">
+      <img
+        src="https://www.motortrend.com/files/66a9771652c45400082bd012/21-2025-hyundai-elantra-n-front-view.jpg"
+        alt="Hyundai Elantra 2025 N Front View"
+        className="w-full h-full object-cover"
+      />
+    </div>
+    
+    <h3 className="text-2xl font-bold text-gray-900 mb-2">Hyundai Elantra 2025 N</h3>
+    <p className="text-gray-600 mb-4">Sporty • 4 doors • Performance driven</p>
+    
+    <div className="flex items-center justify-between mb-6">
+      <div>
+        <span className="text-3xl font-bold text-primary">AED 300</span>
+        <span className="text-gray-500 ml-2">Per day</span>
+      </div>
+      <div className="text-right">
+        <div className="text-sm text-gray-500 line-through">AED 380</div>
+        <div className="text-sm text-green-600 font-medium">Save 20%</div>
+      </div>
+    </div>
+    
+    <a
+      href={whatsappUrl}
+      className="magnetic-btn bg-primary text-white w-full py-3 rounded-full font-semibold text-center block"
+      data-testid="button-book-featured"
+    >
+      Book This Deal
+    </a>
+  </div>
+</div>
+
+
         </div>
       </div>
     </section>
