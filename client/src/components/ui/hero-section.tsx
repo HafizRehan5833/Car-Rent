@@ -64,13 +64,12 @@ export function HeroSection({ whatsappUrl }: HeroSectionProps) {
           {/* Main Hero Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text leading-tight" data-testid="hero-title">
-              Experience Luxury
+              Experience Economical
               <br />
               <span className="text-4xl md:text-6xl">Drive Your Dreams</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed" data-testid="hero-description">
-              Premium vehicles meet exceptional service. Whether it's business, weddings, or pure thrill - 
-              GT Cars Rent delivers seamless luxury at unbeatable rates.
+              Premium vehicles meet exceptional service.GT Cars Rent delivers seamless luxury at unbeatable rates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
               <button 

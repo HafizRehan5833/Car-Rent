@@ -6,7 +6,7 @@ export function PromotionalBlock({ whatsappUrl }: PromotionalBlockProps) {
   return (
     <section className="py-16 bg-gradient-to-r from-primary to-primary-dark relative overflow-hidden" data-testid="promotional-block">
       {/* Background Car Silhouettes */}
-      <div className="absolute inset-0 opacity-20">
+      {/* <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 w-full h-full"
              style={{
                backgroundImage: 'url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400")',
@@ -15,7 +15,7 @@ export function PromotionalBlock({ whatsappUrl }: PromotionalBlockProps) {
                filter: 'grayscale(100%) brightness(0.3)'
              }}>
         </div>
-      </div>
+      </div> */}
       
       {/* Floating Elements */}
       <div className="absolute top-10 right-20 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
@@ -63,7 +63,7 @@ export function PromotionalBlock({ whatsappUrl }: PromotionalBlockProps) {
             </div>
           </div>
           
-          <div className="relative">
+          {/* <div className="relative">
             <div className="car-card bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8" data-testid="featured-car">
               <div className="absolute -top-4 -right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold">
                 FEATURED
@@ -99,7 +99,7 @@ export function PromotionalBlock({ whatsappUrl }: PromotionalBlockProps) {
                 Book This Deal
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

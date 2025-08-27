@@ -17,39 +17,39 @@ export function Navigation({ whatsappUrl }: NavigationProps) {
   };
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50" data-testid="navigation">
+    <nav className="bg-red-600 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50" data-testid="navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold gradient-text" data-testid="brand-logo">GT Cars Rent</h1>
+            <h1 className="text-2xl font-bold text-white" data-testid="brand-logo">GT Cars Rent</h1>
           </div>
           
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
               <button 
                 onClick={() => scrollToSection('fleet')} 
-                className="text-gray-700 hover:text-primary transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
                 data-testid="nav-fleet"
               >
                 Fleet
               </button>
               <button 
                 onClick={() => scrollToSection('services')} 
-                className="text-gray-700 hover:text-primary transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
                 data-testid="nav-services"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
-                className="text-gray-700 hover:text-primary transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
                 data-testid="nav-contact"
               >
                 Contact
               </button>
               <a 
                 href={whatsappUrl} 
-                className="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium inline-flex items-center"
+                className="magnetic-btn bg-white text-red-600 px-6 py-2 rounded-full font-medium inline-flex items-center"
                 data-testid="nav-book-now"
               >
                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@ export function Navigation({ whatsappUrl }: NavigationProps) {
           
           <div className="md:hidden">
             <button 
-              className="text-gray-700"
+              className="text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               data-testid="mobile-menu-toggle"
             >
@@ -77,28 +77,28 @@ export function Navigation({ whatsappUrl }: NavigationProps) {
             <div className="flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('fleet')} 
-                className="text-gray-700 hover:text-primary transition-colors text-left"
+                className="text-white hover:text-gray-200 transition-colors text-left"
                 data-testid="mobile-nav-fleet"
               >
                 Fleet
               </button>
               <button 
                 onClick={() => scrollToSection('services')} 
-                className="text-gray-700 hover:text-primary transition-colors text-left"
+                className="text-white hover:text-gray-200 transition-colors text-left"
                 data-testid="mobile-nav-services"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
-                className="text-gray-700 hover:text-primary transition-colors text-left"
+                className="text-white hover:text-gray-200 transition-colors text-left"
                 data-testid="mobile-nav-contact"
               >
                 Contact
               </button>
               <a 
                 href={whatsappUrl} 
-                className="magnetic-btn bg-primary text-white px-6 py-2 rounded-full font-medium inline-flex items-center justify-center w-fit"
+                className="magnetic-btn bg-white text-red-600 px-6 py-2 rounded-full font-medium inline-flex items-center justify-center w-fit"
                 data-testid="mobile-nav-book-now"
               >
                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">

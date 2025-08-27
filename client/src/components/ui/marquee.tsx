@@ -5,7 +5,6 @@ export function Marquee() {
     "🚙 Premium SUVs",
     "💎 Exotic Vehicles",
     "👔 Business Rentals",
-    "💒 Wedding Cars",
     "🌟 24/7 Service",
     "💳 Flexible Payment"
   ];

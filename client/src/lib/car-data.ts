@@ -12,10 +12,12 @@ export interface CarData {
   available: number;
 }
 
-export const whatsappNumber = "+923019201234";
+export const whatsappNumber = "971586987873"; // ✅ no spaces, no '+'
 
 export const getWhatsAppBookingUrl = (carName: string) => {
-  const message = encodeURIComponent(`I'm interested in booking ${carName}. Please provide more details.`);
+  const message = encodeURIComponent(
+    `I'm interested in booking ${carName}. Please provide more details.`
+  );
   return `https://wa.me/${whatsappNumber}?text=${message}`;
 };
 
